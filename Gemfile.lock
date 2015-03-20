@@ -27,8 +27,18 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.6.8)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     arel (5.0.1.20140414130214)
+    awesome_print (1.6.1)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     builder (3.2.2)
+    byebug (4.0.3)
+      columnize (= 0.9.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -37,6 +47,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
+    columnize (0.9.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.4.0)
@@ -69,10 +80,16 @@ GEM
     mime-types (2.4.3)
     minitest (5.5.1)
     multi_json (1.11.0)
+    pg (0.18.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.1.0)
+      byebug (~> 4.0)
+      pry (~> 0.10)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -149,13 +166,19 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
+  awesome_print
+  better_errors
   coffee-rails (~> 4.0.0)
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  pg
   pry
+  pry-byebug
+  quiet_assets
   rails (= 4.1.6)
-  rspec-rails
+  rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
