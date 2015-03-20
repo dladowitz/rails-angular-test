@@ -13,7 +13,7 @@ gem 'turbolinks'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 
-group :doc do 
+group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 

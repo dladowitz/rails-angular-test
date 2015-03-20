@@ -8,4 +8,8 @@
   $http.get('./restaurants.json').success((data) ->
     $scope.restaurants = data
   )
+
+  $scope.viewRestaurant = (id)->
+    restaurant = $scope.restaurants[id]
+    alert "Welcome to " + restaurant.name + ": " + restaurant.id
 ]
