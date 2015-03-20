@@ -11,7 +11,8 @@
 
   $scope.viewRestaurant = (id)->
     restaurant = $scope.restaurants[id]
-    alert "Welcome to " + restaurant.name + ": " + restaurant.id
+    $location.url "/restaurants/#{id}"
+#    alert "Welcome to " + restaurant.name + ": " + restaurant.id
 
   $scope.removeLastRestaurant = () ->
     $scope.restaurants.pop()
