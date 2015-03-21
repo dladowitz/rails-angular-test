@@ -1,21 +1,18 @@
 @restauranteur.controller 'HomeCtrl', ['$scope', ($scope) ->
-  console.log("I'm the HomeCtrl")
 
-#  Not sure how to call setLocation to run when controller loads. In JS we'd use this.setLocation
-  $scope.setLocation
-
-  places = ['Belize', 'Virgin Islands', 'Hawaii', 'Cozumel']
-  random_num = Math.floor(Math.random() * 3) + 1
-  $scope.location = places[random_num]
-
-
-
+# Method definitions
   $scope.changePlace = () ->
     console.log "Flying somewhere new: "
+    $scope.setLocation()
+
+  $scope.setLocation = () ->
+    console.log "Setting Location"
+
+    places = ['Belize', 'Virgin Islands', 'Hawaii', 'Cozumel']
     random_num = Math.floor(Math.random() * 3) + 1
     $scope.location = places[random_num]
 
-  $scope.setLocation = () ->
-    random_num = Math.floor(Math.random() * 3) + 1
-    $scope.location = places[random_num]
+# Run on load
+  console.log("I'm the HomeCtrl")
+  $scope.setLocation()
 ]

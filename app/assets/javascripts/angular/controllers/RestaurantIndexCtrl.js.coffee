@@ -1,8 +1,8 @@
 # app/assets/javascripts/angular/controllers/RestaurantIndexCtrl.js.coffee
 
 @restauranteur.controller 'RestaurantIndexCtrl', ['$scope', '$location', '$http', ($scope, $location, $http) ->
-  console.log("I'm the Restaurant Index Ctrl")
-  $scope.restaurants = []
+
+# Function Definitions
 
   # calls the rails json api and loads returned data into restaurants array
   $http.get('./restaurants.json').success((data) ->
@@ -12,14 +12,19 @@
   $scope.viewRestaurant = (id)->
     restaurant = $scope.restaurants[id]
     $location.url "/restaurants/#{id}"
-#    alert "Welcome to " + restaurant.name + ": " + restaurant.id
 
-  $scope.removeLastRestaurant = () ->
-    $scope.restaurants.pop()
-    console.log "Removing Last Restaurant"
-    console.log $scope.restaurants.length + " Restaurants now in controller"
+  $scope.deleteFromDB = (id) ->
+    $http.delete("./restaurants/#{id}.json").success( () ->  console.log "Deleted item from Database" )
+    $scope.deleteFromCtrl(id)
 
-#   Could use the json api here to remove restaurant from database
-#   Seems like you can make a delete call with json instead of html
-#   DELETE /restaurants/1.json
+  $scope.deleteFromCtrl = (id) ->
+    $scope.restaurants = $scope.restaurants.filter( (el) -> el.id != id )
+
+  $scope.say_hello = () ->
+    console.log "hello"
+
+# Run on load
+  console.log("I'm the Restaurant Index Ctrl")
+  $scope.restaurants = []
+  $scope.say_hello()
 ]
