@@ -8,6 +8,8 @@
 
 
 Restaurant.create([
+    { name: "Momofuku" },
+    { name: "Ramen Undergroun" },
     { name: "The French Laundry" },
     { name: "Chez Panisse" },
     { name: "Bouchon" },
